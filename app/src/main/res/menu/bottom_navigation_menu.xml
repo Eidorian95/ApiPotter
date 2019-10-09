@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="House" android:id="@+id/action_house" android:icon="@drawable/ic_home"/>
+    <item android:title="Characters" android:id="@+id/action_charactaers" android:icon="@drawable/ic_person"/>
+    <item android:title="Spells" android:id="@+id/action_spells" android:icon="@drawable/ic_spells"/>
+
+</menu>
