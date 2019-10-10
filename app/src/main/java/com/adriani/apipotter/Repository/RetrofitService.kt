@@ -8,7 +8,7 @@ object RetrofitService {
 
     private const val BASE_URL = "https://www.potterapi.com/v1/"
 
-    val getRetrofit: ApiPotterService
+    val getRetrofit: ApiPotterInterface
         get() {
             val gson = GsonBuilder()
                 .setLenient()
@@ -18,7 +18,7 @@ object RetrofitService {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
 
-            return retrofit.create(ApiPotterService::class.java)
+            return retrofit.create(ApiPotterInterface::class.java)
         }
 
 }
