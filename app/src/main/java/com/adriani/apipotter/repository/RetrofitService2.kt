@@ -1,14 +1,14 @@
-package com.adriani.apipotter.Repository
+package com.adriani.apipotter.repository
 
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitService {
+object RetrofitService2 {
 
     private const val BASE_URL = "https://www.potterapi.com/v1/"
 
-    val getRetrofit: ApiPotterInterface
+    val getRetrofit: ApiPotterInterface2
         get() {
             val gson = GsonBuilder()
                 .setLenient()
@@ -18,7 +18,7 @@ object RetrofitService {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
 
-            return retrofit.create(ApiPotterInterface::class.java)
+            return retrofit.create(ApiPotterInterface2::class.java)
         }
 
 }

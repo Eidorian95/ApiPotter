@@ -9,24 +9,26 @@ import android.view.ViewGroup
 
 import com.adriani.apipotter.R
 
-
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 /**
  * A simple [Fragment] subclass.
  *
  */
-class HousesFragment : Fragment() {
+class SpellsFragment2 : Fragment() {
 
     companion object{
-        fun newInstance():HousesFragment = HousesFragment()
+        fun newInstance():SpellsFragment2 = SpellsFragment2()
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_houses, container, false)
+        return inflater.inflate(R.layout.fragment_spells, container, false)
     }
 
 

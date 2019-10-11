@@ -1,32 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+
+<layout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" tools:layout_editor_absoluteY="81dp"
-        android:layout_gravity="center_horizontal">
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    <variable
+            name="hpCharacter2"
+            type="com.adriani.apipotter.model.HpCharacter2"/>
+    </data>
 
     <LinearLayout
-            android:background="@drawable/template_background"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.589" app:layout_constraintVertical_bias="0.018"
-            android:gravity="center_horizontal"
-            android:elevation="4dp"
-            android:padding="5dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
 
-        <TextView
-                android:id="@+id/character_name"
-                android:text="Harry Potter"
+        <RelativeLayout
+                android:background="@drawable/template_background"
                 android:layout_width="match_parent"
-                android:textSize="24sp"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
                 android:layout_height="wrap_content"
-                />
+                android:elevation="4dp"
+                android:padding="4dp"
+                android:layout_marginTop="4dp"
+                bind:layout_constraintEnd_toEndOf="parent"
+                bind:layout_constraintTop_toTopOf="parent"
+                bind:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp">
+
+            <TextView
+                    android:id="@+id/character_name"
+                    android:text="@{hpCharacter2.name}"
+                    android:layout_width="match_parent"
+                    android:textSize="24sp"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    tools:text="Harry Potter"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" android:layout_marginStart="5dp"
+                    android:layout_alignParentEnd="true" android:layout_marginEnd="5dp"/>
+            <TextView
+                    android:text="@{hpCharacter2.bloodStatus}"
+                    tools:text="Pure-Blood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/caracter_type_blood"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="94dp" android:layout_marginTop="1dp"
+                    android:layout_below="@+id/character_name"/>
+            <TextView
+                    android:text="@{hpCharacter2.house}"
+                    tools:text="Gryffindor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/character_house"
+                    android:layout_below="@+id/character_name" android:layout_marginTop="1dp"
+                    android:layout_toEndOf="@+id/caracter_type_blood" android:layout_marginStart="13dp"
+                    android:layout_alignParentEnd="true" android:layout_marginEnd="53dp"/>
+        </RelativeLayout>
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</layout>

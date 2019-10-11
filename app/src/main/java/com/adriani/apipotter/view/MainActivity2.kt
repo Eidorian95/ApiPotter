@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import com.adriani.apipotter.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,17 +17,17 @@ class MainActivity : AppCompatActivity() {
         navigationBar.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.action_charactaers -> {
-                    val fragment = CharactersFragmet.newInstance()
+                    val fragment = CharactersFragmet2.newInstance()
                     openFragment(fragment)
                     true
                 }
                 R.id.action_house -> {
-                    val fragment = HousesFragment.newInstance()
+                    val fragment = HousesFragment2.newInstance()
                     openFragment(fragment)
                     true
                 }
                 R.id.action_spells -> {
-                    val fragment = SpellsFragment.newInstance()
+                    val fragment = SpellsFragment2.newInstance()
                     openFragment(fragment)
                     true
                 }
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setFragment(){
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.main_fragment, CharactersFragmet.newInstance())
+        transaction.replace(R.id.main_fragment, CharactersFragmet2.newInstance())
         transaction.addToBackStack(null)
         transaction.commit()
 
