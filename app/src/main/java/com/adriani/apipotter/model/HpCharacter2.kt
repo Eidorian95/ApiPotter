@@ -1,9 +1,9 @@
-package com.adriani.apipotter.Model
+package com.adriani.apipotter.model
 
 
 import com.google.gson.annotations.SerializedName
 
-data class HpCharacter(
+data class HpCharacter2(
     @SerializedName("bloodStatus")
     val bloodStatus: String,
     @SerializedName("deathEater")
