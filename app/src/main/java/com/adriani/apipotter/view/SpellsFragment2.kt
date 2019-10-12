@@ -36,24 +36,18 @@ class SpellsFragment2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var spellList:List<Spell>? = null
         val viewModel: SpellsViewModel = ViewModelProviders.of(this).get(SpellsViewModel::class.java)
 
         viewModel.isLoading.observe(this, Observer<Boolean> {
             it?.let{showLoading(it)}
         })
 
-
-        if(!spellList.isNullOrEmpty()){
-            setRecyclerView(spellList)
-        }else {
             viewModel.getSpells().observe(this, Observer<List<Spell>> { spells ->
                 if (!spells.isNullOrEmpty()) {
-                    spellList = spells
-                    setRecyclerView(spellList!!)
+                    setRecyclerView(spells)
                 }
             })
-        }
+
     }
 
 
