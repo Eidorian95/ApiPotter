@@ -16,14 +16,15 @@ class CharactersViewModel2 : ViewModel() {
 
     fun getCharacters():LiveData<List<HpCharacter2>>{
         if(!::charactersList.isInitialized){
-            findCharacter()
+            loadCharacters()
         }
         return charactersList
     }
 
-    private fun findCharacter() {
+    private fun loadCharacters() {
         charactersList = MutableLiveData()
         isLoading.value = true
+
         repo.getAllCharacters({
             charactersList.value = it
             isLoading.value = false
