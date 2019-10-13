@@ -9,15 +9,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 
 import com.adriani.apipotter.R
-import com.adriani.apipotter.model.HpCharacter2
 import com.adriani.apipotter.model.Spell
 import com.adriani.apipotter.view.adapters.SpellAdapter
-import com.adriani.apipotter.viewmodel.CharactersViewModel2
 import com.adriani.apipotter.viewmodel.SpellsViewModel
-import kotlinx.android.synthetic.main.fragment_characters_fragmet.*
 import kotlinx.android.synthetic.main.fragment_spells.*
 
 class SpellsFragment2 : Fragment() {
@@ -30,7 +26,6 @@ class SpellsFragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_spells, container, false)
     }
 
@@ -42,11 +37,9 @@ class SpellsFragment2 : Fragment() {
             it?.let{showLoading(it)}
         })
 
-            viewModel.getSpells().observe(this, Observer<List<Spell>> { spells ->
-                if (!spells.isNullOrEmpty()) {
-                    setRecyclerView(spells)
-                }
-            })
+        viewModel.getSpells().observe(this, Observer<List<Spell>> { spells ->
+            if (!spells.isNullOrEmpty()) setRecyclerView(spells)
+        })
 
     }
 

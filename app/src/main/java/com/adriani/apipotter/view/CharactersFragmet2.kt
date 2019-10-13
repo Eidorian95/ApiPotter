@@ -44,12 +44,16 @@ class CharactersFragmet2 : Fragment() {
 
         viewModel2.getCharacters().observe(this, Observer<List<HpCharacter2>>{ char ->
             if(char!!.isNotEmpty()){
-                characters_list.layoutManager = LinearLayoutManager(activity)
-                characters_list.hasFixedSize()
-                characters_list.adapter = CharactersAdapter2(char)
-                characters_list.visibility = View.VISIBLE
+               setRecyclerView(char)
             }
         })
+    }
+
+    private fun setRecyclerView(characters:List<HpCharacter2>){
+        characters_list.layoutManager = LinearLayoutManager(activity)
+        characters_list.hasFixedSize()
+        characters_list.adapter = CharactersAdapter2(characters)
+        characters_list.visibility = View.VISIBLE
     }
 
     private fun showLoading(loading:Boolean){

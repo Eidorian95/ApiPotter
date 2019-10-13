@@ -1,5 +1,6 @@
 package com.adriani.apipotter.repository
 
+import com.adriani.apipotter.model.House
 import com.adriani.apipotter.model.HpCharacter2
 import com.adriani.apipotter.model.Spell
 import retrofit2.Call
@@ -14,5 +15,8 @@ interface ApiPotterInterface2 {
     @GET("spells/")
     fun getAllSpells(@Query ("key") apiKey:String): Call<List<Spell>>
 
+
+    @GET("houses/")
+    fun getAllHouse(@Query ("key") apiKey:String): Call<List<House>>
 
 }

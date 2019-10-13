@@ -10,11 +10,6 @@ import android.view.ViewGroup
 import com.adriani.apipotter.R
 
 
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class HousesFragment2 : Fragment() {
 
     companion object{

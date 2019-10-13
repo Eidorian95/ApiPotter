@@ -1,5 +1,6 @@
 package com.adriani.apipotter.repository
 
+import com.adriani.apipotter.model.House
 import com.adriani.apipotter.model.HpCharacter2
 import com.adriani.apipotter.model.Spell
 import retrofit2.Call
@@ -34,6 +35,21 @@ class ApiRepository2 {
             override fun onResponse(call: Call<List<Spell>>, response: Response<List<Spell>>) {
                 success(response.body()!!)
             }
+        })
+    }
+
+
+    fun getAllHouses(success: (List<House>) -> Unit, failure: (Throwable) -> Unit){
+        val houses:Call<List<House>> = retrofit.getAllHouse(KEY)
+        houses.enqueue(object : Callback<List<House>>{
+            override fun onFailure(call: Call<List<House>>, t: Throwable) {
+                failure(t)
+            }
+
+            override fun onResponse(call: Call<List<House>>, response: Response<List<House>>) {
+                success(response.body()!!)
+            }
+
         })
     }
 }
